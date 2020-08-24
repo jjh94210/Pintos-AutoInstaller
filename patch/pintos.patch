@@ -1,0 +1,29 @@
+--- pintos	2012-09-26 17:38:38.000000000 -0700
++++ pintos-patched	2020-08-23 23:17:30.930053445 -0700
+@@ -853,7 +853,7 @@
+ 	alarm (0);
+ 	&$cleanup ();
+ 
+-	if (WIFSIGNALED ($?) && WTERMSIG ($?) == SIGVTALRM ()) {
++	if (WIFSIGNALED ($?) && WTERMSIG ($?) == TMPSIGVTALRM ()) {
+ 	    seek (STDOUT, 0, 2);
+ 	    print "\nTIMEOUT after $timeout seconds of host CPU time\n";
+ 	    exit 0;
+@@ -908,7 +908,7 @@
+ # Calls setitimer to set a timeout, then execs what was passed to us.
+ sub exec_setitimer {
+     if (defined $timeout) {
+-	if ($ ge 5.8.0) {
++	if ($] ge 5.8.0) {
+ 	    eval "
+               use Time::HiRes qw(setitimer ITIMER_VIRTUAL);
+               setitimer (ITIMER_VIRTUAL, $timeout, 0);
+@@ -924,7 +924,7 @@
+     exit (1);
+ }
+ 
+-sub SIGVTALRM {
++sub TMPSIGVTALRM {
+     use Config;
+     my $i = 0;
+     foreach my $name (split(' ', $Config{sig_name})) {

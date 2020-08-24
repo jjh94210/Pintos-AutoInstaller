@@ -1,0 +1,11 @@
+--- Makefile	2012-09-26 17:38:38.000000000 -0700
++++ Makefile-patched	2020-08-23 23:25:39.744420253 -0700
+@@ -2,7 +2,7 @@
+ 
+ CC = gcc
+ CFLAGS = -Wall -W
+-LDFLAGS = -lm
++LDLIBS = -lm
+ setitimer-helper: setitimer-helper.o
+ squish-pty: squish-pty.o
+ squish-unix: squish-unix.o
