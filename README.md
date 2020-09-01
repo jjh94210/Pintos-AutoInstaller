@@ -7,6 +7,7 @@ Automatic Installer for Pintos in Ubuntu 18.04
 2. Set up:
    ```bash
    git clone https://github.com/jjh94210/Pintos-AutoInstaller.git
+   cd ./Pintos-AutoInstaller
    mv * $Your_destination_path
    cd $Your_destination_path
    sh pintos.sh`
