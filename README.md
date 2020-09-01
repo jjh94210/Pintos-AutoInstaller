@@ -10,7 +10,7 @@ Automatic Installer for Pintos in Ubuntu 18.04
    cd ./Pintos-AutoInstaller
    mv * $Your_destination_path
    cd $Your_destination_path
-   sh pintos.sh`
+   sh pintos.sh
    ```
    And restart your shell or terminal
 3. And follow https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html. Enjoy!
